@@ -85,7 +85,7 @@ export default function Home() {
               <img
                 className="w-full h-full object-cover"
                 alt="Fresh Malaysian ingredients"
-                src="https://images.unsplash.com/photo-1511689986115-8f9e4bd3461f?auto=format&fit=crop&w=500&q=80"
+                src="https://picsum.photos/id/1080/500/500"
               />
             </div>
           </div>
