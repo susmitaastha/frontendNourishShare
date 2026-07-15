@@ -59,12 +59,12 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-md">
               <Link to={isAuthenticated ? '/dashboard' : '/register'}>
-                <Button variant="primary" className="px-[56px] py-[18px] min-w-[195px] rounded-full" icon="arrow_forward">
+                <Button className="px-[56px] py-[18px] min-w-[195px]" icon="arrow_forward">
                   {isAuthenticated ? 'Go to Dashboard' : 'Start your Pantry'}
                 </Button>
               </Link>
               <Link to="/how-it-works">
-                <Button variant="outline" className="px-[56px] py-[18px] min-w-[195px] rounded-full">
+                <Button variant="outline" className="px-[56px] py-[18px] min-w-[195px]">
                   Learn more
                 </Button>
               </Link>
@@ -202,7 +202,7 @@ export default function Home() {
                     src={donation.image}
                     alt={donation.itemName}
                   />
-                  <div className="absolute top-md right-md bg-primary text-on-primary px-sm py-xs rounded font-label-sm">
+                  <div className="absolute top-md right-md bg-primary text-on-primary px-sm py-xs rounded-md font-label-sm">
                     Free
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export default function Home() {
                     <span className="material-symbols-outlined text-sm">location_on</span> {donation.pickupLocation}
                   </p>
                   <Link to={isAuthenticated ? `/donations/${donation.id}` : '/login'}>
-                    <Button variant="secondary" className="w-full py-sm font-label-sm">View Listing</Button>
+                    <Button variant="primary" className="w-full py-sm font-label-sm">View Listing</Button>
                   </Link>
                 </div>
               </div>
@@ -226,7 +226,7 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="py-xl text-center px-lg reveal-on-scroll">
-        <div className="max-w-3xl mx-auto bg-tertiary-container text-on-tertiary-container p-xl rounded-2xl relative overflow-hidden">
+        <div className="max-w-3xl mx-auto bg-[#FCE6DE] text-on-surface p-xl rounded-2xl relative overflow-hidden border border-outline-variant">
           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
           <h2 className="font-headline-lg mb-md">Ready to reduce your kitchen&apos;s footprint?</h2>
           <p className="font-body-md mb-xl opacity-90">
@@ -234,10 +234,20 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-md">
             <Link to={isAuthenticated ? '/dashboard' : '/register'}>
-              <Button className="px-[56px] py-[18px] min-w-[220px]">{isAuthenticated ? 'Go to Dashboard' : 'Join NourishShare'}</Button>
+              <Button
+                variant="primary"
+                className="rounded-[12px] bg-primary px-14 py-4 min-w-[220px] text-headline-md shadow-md"
+              >
+                {isAuthenticated ? 'Go to Dashboard' : 'Join NourishShare'}
+              </Button>
             </Link>
             <Link to="/contact">
-              <Button className="px-[56px] py-[18px] min-w-[220px]">Contact Sales for Organizations</Button>
+              <Button
+                variant="outline"
+                className="rounded-[12px] px-14 py-4 min-w-[220px] text-headline-md text-primary border-0 bg-[#F7D2C4] hover:bg-[#FCE6DE] transition-colors duration-200"
+              >
+                Contact Sales for Organizations
+              </Button>
             </Link>
           </div>
         </div>
