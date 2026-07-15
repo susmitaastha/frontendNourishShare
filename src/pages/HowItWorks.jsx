@@ -53,16 +53,16 @@ export default function HowItWorks() {
             {STAGES.map((stage, i) => (
               <div
                 key={stage.title}
-                className={`flex flex-col md:flex-row items-start gap-lg p-lg rounded-xl border border-outline-variant ${
+                className={`group flex flex-col md:flex-row items-start gap-lg p-lg rounded-xl border border-outline-variant transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary/5 ${
                   i % 2 === 0 ? 'bg-surface' : 'bg-surface-container-low'
                 }`}
               >
-                <div className="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+                <div className="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0 transition-colors group-hover:bg-primary group-hover:text-on-primary">
                   <span className="material-symbols-outlined text-[28px]">{stage.icon}</span>
                 </div>
                 <div>
-                  <h3 className="font-headline-md text-primary mb-xs">{stage.title}</h3>
-                  <p className="font-body-md text-on-surface-variant">{stage.desc}</p>
+                  <h3 className="font-headline-md text-primary mb-xs transition-colors group-hover:text-secondary">{stage.title}</h3>
+                  <p className="font-body-md text-on-surface-variant transition-colors group-hover:text-on-background">{stage.desc}</p>
                 </div>
               </div>
             ))}
