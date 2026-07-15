@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import PublicLayout from '../components/layout/PublicLayout.jsx';
+import aboutImage from '../assets/gathering.jpg';
 
 const TOOLS = [
   {
@@ -113,24 +114,27 @@ export default function About() {
 
         {/* Beyond the app */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-xl py-xl items-center border-t border-outline-variant">
-          <div>
-            <img
-              className="w-full h-[400px] object-cover rounded-xl shadow-sm border border-outline-variant"
-              alt="Community members gathering around a food-sharing table"
-              src="https://images.unsplash.com/photo-1528150177501-4fd7066f6d16?auto=format&fit=crop&w=800&q=80"
-            />
+          <div className="relative">
+            <div className="overflow-hidden rounded-3xl shadow-lg border border-outline-variant">
+              <img
+                className="w-full h-[420px] object-cover"
+                alt="Community members gathering around a food-sharing table"
+                src={aboutImage}
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent rounded-3xl pointer-events-none" />
           </div>
           <div>
             <h2 className="font-headline-lg text-on-background mb-lg">Beyond the App</h2>
             <div className="space-y-lg">
               {BEYOND.map((item, i) => (
-                <div key={item.title} className="flex gap-md">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full border border-primary flex items-center justify-center font-bold text-primary">
+                <div key={item.title} className="group flex gap-md rounded-3xl border border-outline-variant bg-surface-container p-lg transition-colors hover:border-primary hover:bg-primary/5">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full border border-primary flex items-center justify-center font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary">
                     {i + 1}
                   </div>
                   <div>
-                    <h4 className="font-headline-md text-primary mb-xs">{item.title}</h4>
-                    <p className="font-body-md text-on-surface-variant">{item.desc}</p>
+                    <h4 className="font-headline-md text-primary mb-xs transition-colors group-hover:text-secondary">{item.title}</h4>
+                    <p className="font-body-md text-on-surface-variant transition-colors group-hover:text-on-background">{item.desc}</p>
                   </div>
                 </div>
               ))}

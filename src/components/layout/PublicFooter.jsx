@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logoImg from '../../assets/logoo.png';
 
 export default function PublicFooter() {
   return (
@@ -6,13 +7,7 @@ export default function PublicFooter() {
       <div className="max-w-7xl mx-auto px-lg grid grid-cols-1 md:grid-cols-4 gap-xl">
         <div className="md:col-span-1">
           <div className="flex items-center gap-sm mb-md">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
-                <path d="M5 12c0-3 2.5-5.5 5.5-5.5S16 9 16 12s-2.5 5.5-5.5 5.5S5 15 5 12Z" />
-                <path d="M12 6C14.5 6 16 7.5 16 10c0 1.86-1.07 3.45-2.63 4.15" />
-              </svg>
-            </span>
-            <span className="font-headline-md text-primary font-bold">NourishShare</span>
+            <img src={logoImg} alt="NourishShare" className="h-24 w-24 rounded-lg object-cover" />
           </div>
           <p className="font-label-sm text-on-surface-variant mb-lg">
             A digital ecosystem for mindful consumption and food waste reduction in Malaysia.
