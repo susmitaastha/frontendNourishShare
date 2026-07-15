@@ -49,7 +49,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-lg grid md:grid-cols-2 gap-xl items-center">
           <div className="z-10">
             <span className="inline-block bg-secondary-fixed text-on-secondary-fixed px-md py-xs rounded-full font-label-md mb-md">
-              Lawan Pembaziran Makanan
+              Fight Food Waste
             </span>
             <h1 className="font-headline-xl text-primary mb-lg leading-tight">
               Preserving Malaysia&apos;s flavors, one kitchen at a time.
@@ -59,12 +59,12 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-md">
               <Link to={isAuthenticated ? '/dashboard' : '/register'}>
-                <Button className="px-xl py-md min-w-[195px]" icon="arrow_forward">
+                <Button variant="primary" className="px-[56px] py-[18px] min-w-[195px] rounded-full" icon="arrow_forward">
                   {isAuthenticated ? 'Go to Dashboard' : 'Start your Pantry'}
                 </Button>
               </Link>
               <Link to="/how-it-works">
-                <Button variant="outline" className="px-xl py-md min-w-[195px]">
+                <Button variant="outline" className="px-[56px] py-[18px] min-w-[195px] rounded-full">
                   Learn more
                 </Button>
               </Link>
@@ -214,11 +214,8 @@ export default function Home() {
                   <p className="text-xs text-on-surface-variant mb-md flex items-center gap-xs">
                     <span className="material-symbols-outlined text-sm">location_on</span> {donation.pickupLocation}
                   </p>
-                  <Link
-                    to={isAuthenticated ? `/donations/${donation.id}` : '/login'}
-                    className="block text-center w-full py-sm border border-outline text-primary font-label-sm rounded hover:bg-surface-container transition-colors"
-                  >
-                    View Listing
+                  <Link to={isAuthenticated ? `/donations/${donation.id}` : '/login'}>
+                    <Button variant="secondary" className="w-full py-sm font-label-sm">View Listing</Button>
                   </Link>
                 </div>
               </div>
@@ -237,13 +234,10 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-md">
             <Link to={isAuthenticated ? '/dashboard' : '/register'}>
-              <Button className="px-xl py-md">{isAuthenticated ? 'Go to Dashboard' : 'Join NourishShare'}</Button>
+              <Button className="px-[56px] py-[18px] min-w-[220px]">{isAuthenticated ? 'Go to Dashboard' : 'Join NourishShare'}</Button>
             </Link>
-            <Link
-              to="/contact"
-              className="bg-on-tertiary-container text-tertiary-container px-xl py-md rounded-lg font-label-md inline-flex items-center justify-center"
-            >
-              Contact Sales for Organizations
+            <Link to="/contact">
+              <Button className="px-[56px] py-[18px] min-w-[220px]">Contact Sales for Organizations</Button>
             </Link>
           </div>
         </div>

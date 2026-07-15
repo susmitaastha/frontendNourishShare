@@ -1,3 +1,6 @@
+import artisanBreadImage from '../assets/Artisan Bread and Pastry.jpg';
+import essentialPantryImage from '../assets/EssentialPantry.jpg';
+
 // Simple placeholder image generator so the app runs without external image deps
 const img = (seed, w = 400, h = 300) => `https://picsum.photos/seed/${seed}/${w}/${h}`;
 
@@ -103,7 +106,7 @@ export const INITIAL_DONATIONS = [
     donorName: 'Puan Siti Aminah',
     donorRole: 'Home Gardener • Kampung Baru',
     distanceKm: 0.8,
-    image: img('produce-box'),
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80',
     status: 'available', // 'available' | 'claimed'
   },
   {
@@ -118,7 +121,7 @@ export const INITIAL_DONATIONS = [
     donorName: 'Hana Bakery Collective',
     donorRole: 'Community Bakery',
     distanceKm: 1.2,
-    image: img('bread'),
+    image: artisanBreadImage,
     status: 'available',
   },
   {
@@ -148,7 +151,7 @@ export const INITIAL_DONATIONS = [
     donorName: 'Mei Ling',
     donorRole: 'Verified Donor',
     distanceKm: 0.4,
-    image: img('pantry-staples'),
+    image: essentialPantryImage,
     status: 'available',
   },
   {
