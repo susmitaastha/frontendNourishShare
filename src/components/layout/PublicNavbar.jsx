@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+import logoImg from '../../assets/logoo.png';
 
 const LINKS = [
   { to: '/', label: 'Home', end: true },
@@ -25,15 +26,9 @@ export default function PublicNavbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
-      <nav className="max-w-7xl mx-auto px-lg h-20 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-xs font-headline-md text-primary font-bold">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
-              <path d="M5 12c0-3 2.5-5.5 5.5-5.5S16 9 16 12s-2.5 5.5-5.5 5.5S5 15 5 12Z" />
-              <path d="M12 6C14.5 6 16 7.5 16 10c0 1.86-1.07 3.45-2.63 4.15" />
-            </svg>
-          </span>
-          NourishShare
+      <nav className="max-w-7xl mx-auto px-lg h-24 flex justify-between items-center">
+        <Link to="/" className="flex items-center gap-xs">
+          <img src={logoImg} alt="NourishShare" className="h-24 w-24 rounded-full object-cover" />
         </Link>
 
         {/* Desktop links */}
