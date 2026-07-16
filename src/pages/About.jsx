@@ -7,23 +7,44 @@ const TOOLS = [
     icon: 'inventory_2',
     title: 'Smart Inventory',
     desc: "Track your pantry items with expiry alerts, so you always know what's in stock before you buy more.",
+    accent: 'bg-primary-container text-on-primary-container',
+    accentBg: 'bg-primary-container/10',
   },
   {
     icon: 'volunteer_activism',
     title: 'Hyper-Local Donations',
     desc: 'Connect with neighbors and community groups instantly. One-tap surplus sharing makes giving easy.',
+    accent: 'bg-secondary-fixed text-secondary',
+    accentBg: 'bg-secondary-fixed/10',
   },
   {
     icon: 'calendar_month',
     title: 'Meal Orchestration',
     desc: "Get suggestions based on what's about to expire — save money and reduce waste through smart planning.",
+    accent: 'bg-tertiary-fixed text-on-tertiary',
+    accentBg: 'bg-tertiary-fixed/10',
   },
 ];
 
 const BEYOND = [
-  { title: 'Education', desc: 'Guides on sustainable cooking and food preservation for households across Malaysia.' },
-  { title: 'Logistics', desc: 'Making it simple to bridge the gap between donors and the neighbors who need surplus food most.' },
-  { title: 'Data', desc: 'Surfacing insights that help communities and policymakers design better food security initiatives.' },
+  {
+    title: 'Education',
+    desc: 'Guides on sustainable cooking and food preservation for households across Malaysia.',
+    accent: 'bg-primary-container text-on-primary-container',
+    accentBg: 'bg-primary-container/10',
+  },
+  {
+    title: 'Logistics',
+    desc: 'Making it simple to bridge the gap between donors and the neighbors who need surplus food most.',
+    accent: 'bg-secondary-fixed text-secondary',
+    accentBg: 'bg-secondary-fixed/10',
+  },
+  {
+    title: 'Data',
+    desc: 'Surfacing insights that help communities and policymakers design better food security initiatives.',
+    accent: 'bg-tertiary-fixed text-on-tertiary',
+    accentBg: 'bg-tertiary-fixed/10',
+  },
 ];
 
 export default function About() {
@@ -98,11 +119,11 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
             {TOOLS.map((tool) => (
-              <div key={tool.title} className="bg-surface-container border border-outline-variant p-lg rounded-lg flex flex-col hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-lg">
-                  <span className="material-symbols-outlined text-primary">{tool.icon}</span>
+              <div key={tool.title} className={`${tool.accentBg} border border-outline-variant p-lg rounded-xl flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-300`}>
+                <div className={`${tool.accent} w-12 h-12 rounded-full flex items-center justify-center mb-lg shadow-sm`}>
+                  <span className="material-symbols-outlined text-2xl">{tool.icon}</span>
                 </div>
-                <h3 className="font-headline-md mb-md">{tool.title}</h3>
+                <h3 className="font-headline-md mb-md text-primary">{tool.title}</h3>
                 <p className="font-body-md text-on-surface-variant">{tool.desc}</p>
                 <div className="mt-auto border-t border-outline-variant pt-md flex items-center gap-xs text-primary font-label-md cursor-pointer group">
                   Learn More <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -128,8 +149,8 @@ export default function About() {
             <h2 className="font-headline-lg text-on-background mb-lg">Beyond the App</h2>
             <div className="space-y-lg">
               {BEYOND.map((item, i) => (
-                <div key={item.title} className="group flex gap-md rounded-3xl border border-outline-variant bg-surface-container p-lg transition-colors hover:border-primary hover:bg-primary/5">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full border border-primary flex items-center justify-center font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary">
+                <div key={item.title} className={`${item.accentBg} group flex gap-md rounded-3xl border border-outline-variant p-lg transition-colors hover:border-primary hover:bg-primary/5`}>
+                  <div className={`${item.accent} flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all duration-300 group-hover:bg-primary group-hover:text-on-primary`}>
                     {i + 1}
                   </div>
                   <div>

@@ -35,13 +35,10 @@ export default function Login() {
   }
 
   return (
-    <AuthLayout
-      heroTitle="Feed your soul, manage your surplus."
-      heroSubtitle="Our digital pantry helps you track inventory, plan meals, and share abundance with those who need it most in your community."
-    >
+    <AuthLayout>
       <header className="mb-xl">
-        <h2 className="font-headline-lg text-headline-lg text-on-surface mb-xs">Welcome Back</h2>
-        <p className="font-body-md text-on-surface-variant">Step back into your digital pantry.</p>
+        <h2 className="font-headline-lg text-headline-lg text-surface mb-xs">Welcome Back</h2>
+        <p className="font-body-md text-surface/70">Step back into your digital pantry.</p>
       </header>
       <form className="space-y-lg" onSubmit={handleSubmit}>
         <Input 
@@ -52,14 +49,14 @@ export default function Login() {
         />
         <div className="space-y-xs">
           <div className="flex justify-between items-center">
-            <label className="font-label-md text-label-md text-primary block">Password</label>
-            <Link to="/forgot-password" className="font-label-sm text-label-sm text-secondary hover:underline">
+            <label className="font-label-md text-label-md text-surface block">Password</label>
+            <Link to="/forgot-password" className="font-label-sm text-label-sm text-[#E8B44A] hover:underline">
               Forgot password?
             </Link>
           </div>
           <div className="relative">
             <input
-              className="stamped-input py-sm font-body-md placeholder:opacity-30 w-full pr-xl"
+              className="stamped-input py-sm font-body-md text-surface placeholder:text-surface/30 border-surface/25 bg-transparent w-full pr-xl"
               placeholder="••••••••"
               type={showPassword ? 'text' : 'password'}
               value={password}
@@ -67,7 +64,7 @@ export default function Login() {
             />
             <button
               type="button"
-              className="material-symbols-outlined absolute right-0 top-1/2 -translate-y-1/2 text-outline text-[20px] hover:text-primary transition-colors"
+              className="material-symbols-outlined absolute right-0 top-1/2 -translate-y-1/2 text-surface/50 text-[20px] hover:text-surface transition-colors"
               onClick={() => setShowPassword((s) => !s)}
             >
               {showPassword ? 'visibility_off' : 'visibility'}
@@ -81,9 +78,9 @@ export default function Login() {
             id="remember"
             checked={remember}
             onChange={(e) => setRemember(e.target.checked)}
-            className="w-5 h-5 rounded border-outline-variant text-primary bg-surface-container-low cursor-pointer"
+            className="w-5 h-5 rounded border-surface/30 text-primary bg-surface/10 cursor-pointer"
           />
-          <label htmlFor="remember" className="ml-sm font-label-md text-label-md text-on-surface-variant cursor-pointer">
+          <label htmlFor="remember" className="ml-sm font-label-md text-label-md text-surface/70 cursor-pointer">
             Keep me logged in
           </label>
         </div>
@@ -91,9 +88,9 @@ export default function Login() {
           {submitting ? 'Logging in...' : 'Log in'}
         </Button>
         <footer className="mt-xl text-center">
-          <p className="font-body-md text-on-surface-variant">
+          <p className="font-body-md text-surface/70">
             Don&apos;t have an account?{' '}
-            <Link to="/register" className="font-label-md text-label-md text-secondary hover:underline ml-xs">
+            <Link to="/register" className="font-label-md text-label-md text-[#E8B44A] hover:underline ml-xs">
               Register your pantry
             </Link>
           </p>
