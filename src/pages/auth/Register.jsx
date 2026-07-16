@@ -45,20 +45,10 @@ export default function Register() {
   }
 
   return (
-    <AuthLayout
-      heroTitle={
-        <>
-          Waste Less, <br /> Share More.
-        </>
-      }
-      stats={[
-        { icon: 'volunteer_activism', value: '1.2k+', label: 'Active Donors' },
-        { icon: 'eco', value: '450kg', label: 'Waste Diverted' },
-      ]}
-    >
+    <AuthLayout>
       <div className="mb-xl">
-        <h2 className="font-headline-lg text-headline-lg text-primary mb-xs">Create Account</h2>
-        <p className="text-on-surface-variant font-body-md">Fill in your details to start your digital pantry journey.</p>
+        <h2 className="font-headline-lg text-headline-lg text-surface mb-xs">Create Account</h2>
+        <p className="text-surface/70 font-body-md">Fill in your details to start your digital pantry journey.</p>
       </div>
       <form className="space-y-lg" onSubmit={handleSubmit}>
         <Input
@@ -110,12 +100,12 @@ export default function Register() {
         </div>
         <PasswordStrengthMeter value={form.password} />
 
-        <div className="bg-surface-container-low p-md rounded-lg border border-outline-variant/30 flex gap-md items-start">
-          <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>
+        <div className="bg-surface/8 p-md rounded-lg border border-surface/20 flex gap-md items-start">
+          <span className="material-symbols-outlined text-[#E8B44A]" style={{ fontVariationSettings: "'FILL' 1" }}>
             mail_lock
           </span>
-          <p className="text-label-sm font-label-sm text-on-surface-variant">
-            <strong>Verification Required:</strong> We&apos;ll send a secure link to your email to confirm your account
+          <p className="text-label-sm font-label-sm text-surface/70">
+            <strong className="text-surface">Verification Required:</strong> We&apos;ll send a secure link to your email to confirm your account
             and ensure community safety.
           </p>
         </div>
@@ -126,11 +116,11 @@ export default function Register() {
             id="tos"
             checked={agreed}
             onChange={(e) => setAgreed(e.target.checked)}
-            className="w-5 h-5 mt-1 rounded-sm border-outline text-primary focus:ring-primary-fixed-dim cursor-pointer"
+            className="w-5 h-5 mt-1 rounded-sm border-surface/30 text-primary focus:ring-primary-fixed-dim cursor-pointer bg-surface/10"
           />
-          <label htmlFor="tos" className="font-label-md text-label-md text-on-surface-variant cursor-pointer select-none">
-            I agree to the <span className="text-primary underline">Terms of Service</span> and{' '}
-            <span className="text-primary underline">Privacy Policy</span>.
+          <label htmlFor="tos" className="font-label-md text-label-md text-surface/70 cursor-pointer select-none">
+            I agree to the <span className="text-[#E8B44A] underline">Terms of Service</span> and{' '}
+            <span className="text-[#E8B44A] underline">Privacy Policy</span>.
           </label>
         </div>
         {errors.agreed && <p className="text-label-sm text-error -mt-md">{errors.agreed}</p>}
@@ -139,9 +129,9 @@ export default function Register() {
           <Button type="submit" className="w-full" disabled={submitting} icon={submitting ? undefined : 'arrow_forward'}>
             {submitting ? 'Processing...' : 'Continue'}
           </Button>
-          <p className="text-center text-label-md font-label-md text-on-surface-variant">
+          <p className="text-center text-label-md font-label-md text-surface/70">
             Already have an account?{' '}
-            <Link to="/login" className="text-secondary font-bold hover:underline">
+            <Link to="/login" className="text-[#E8B44A] font-bold hover:underline">
               Sign In Here
             </Link>
           </p>
