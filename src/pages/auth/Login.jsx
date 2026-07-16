@@ -44,9 +44,9 @@ export default function Login() {
         <p className="font-body-md text-on-surface-variant">Step back into your digital pantry.</p>
       </header>
       <form className="space-y-lg" onSubmit={handleSubmit}>
-        <Input
+        <Input 
           label="Email or Phone Number"
-          placeholder="pantry@saveplate.com"
+          placeholder="Enter your email or phone number"
           value={identity}
           onChange={(e) => setIdentity(e.target.value)}
         />
